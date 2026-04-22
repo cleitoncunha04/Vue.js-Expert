@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Vue.js Expert - Aula 03</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+
+        <input type="text" v-model="message2" placeholder="Digite algo...">
+        <button @click="sendMessage">Enviar mensagem</button>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue
+
+        createApp({
+            setup() {
+                const message = ref('Curso Vue.js Expert - Aula 03')
+
+                const message2 = ref('')
+
+                const sendMessage = () => {
+                    message.value = message2.value
+
+                    setTimeout(() => {
+                        message2.value = ''
+                    }, 125)
+                }
+
+                return {
+                    message,
+                    message2,
+                    sendMessage
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
