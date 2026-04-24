@@ -1,12 +1,9 @@
 <script setup>
+import Navbar from '@/components/Navbar.vue';
 import { RouterView } from 'vue-router'
 </script>
 
 <template>
-    <div>
-        <div class="navbar bg-neutral text-neutral-content">
-            <button class="btn btn-ghost text-xl">daisyUI</button>
-        </div>
-        <RouterView />
-    </div>
+    <Navbar />
+    <RouterView />
 </template>
