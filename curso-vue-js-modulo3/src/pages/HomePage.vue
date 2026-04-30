@@ -1,7 +1,13 @@
 <script setup>
-import PageDefault from '@/components/PageDefault.vue';
-import { ref } from 'vue';
-import BasicForm from '@/components/BasicForm.vue';
+import { ref, defineAsyncComponent } from 'vue';
+
+const PageDefault = defineAsyncComponent(() => 
+  import('@/components/PageDefault.vue')
+)
+
+const BasicForm = defineAsyncComponent(() => 
+  import('@/components/BasicForm.vue')
+)
 
 const count = ref(1);
 
